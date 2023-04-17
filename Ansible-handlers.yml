@@ -1,0 +1,21 @@
+---
+- name: Install the Nginx Package
+  hosts: all
+  become: true
+  tasks:
+  - name: Installing nginx
+    yum:
+      name: nginx
+      state: present
+
+  - name: Start the Nginx service
+    systemd:
+      name: nginx
+      state: started
+    notify: Stop Nginx
+
+  handlers:
+    - name: Stop Nginx
+      service:
+        name: nginx
+        state: stopped
