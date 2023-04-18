@@ -7,10 +7,9 @@ As required I have created an Ansible role for installing nginx and notify start
 
 I have also tested and verified the solution :)
 
-Note: I am making use of hosts file which is inside my /etc/ansible directory 
 
-for running the playbook we need to use the below command:
+ansible-playbook nginx.yaml -- to run the playbook again the default hosts file
 
-ansible-playbook nginx.yaml -> to run the playbook again the default hosts file
-ansible-playbook nginx.yaml --check -> To perform dry-run.
+ansible-playbook nginx.yaml --check -> To perform dry-run. 
+
 ansible-playbook -i {inventory file path} nginx.yaml -> to run the playbook when running against a different invenoty file.
