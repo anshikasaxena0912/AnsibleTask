@@ -1,4 +1,4 @@
-# Rabobank Ansible Task
+# Ansible Task
 
 As we know Ansible is a configuration management tool which can be used to manage the infrastructure. 
 
