@@ -7,18 +7,15 @@
     yum:
       name: nginx
       state: present
+
   - name: Start the Nginx service
     systemd:
       name: nginx
       state: started
-    notify:
-      - Start Nginx
+    notify: Stop Nginx
+
   handlers:
-  - name: Start Nginx
-    service:
-     name: nginx
-     state: started
-  - name: Stop the Nginx service
-    systemd:
-      name: nginx
-      state: stopped
+    - name: Stop Nginx
+      service:
+        name: nginx
+        state: stopped
